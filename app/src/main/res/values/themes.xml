@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.DeJoyaFinalAssessment" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- switched to a MaterialComponents parent since AppCompatActivity needs one, not the plain android: theme -->
+    <style name="Theme.DeJoyaFinalAssessment" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 </resources>
