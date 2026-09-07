@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DeJoyaFinalAssessment</string>
+
+    <string name="login_title">NIT3213 Final Assignment</string>
+    <string name="login_student_id_hint">Student ID (e.g. 12345678, no s)</string>
+    <string name="login_first_name_hint">First Name (case-sensitive)</string>
+    <string name="login_button">Login</string>
+    <string name="login_error_empty_fields">Enter both your Student ID and First Name</string>
+
+    <string name="dashboard_placeholder">Dashboard - coming soon</string>
 </resources>
