@@ -2,8 +2,10 @@ package com.example.dejoyafinalassessment.di
 
 import com.example.dejoyafinalassessment.data.remote.ApiService
 import com.example.dejoyafinalassessment.data.remote.NetworkConfig
+import com.example.dejoyafinalassessment.ui.login.LoginViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -40,4 +42,7 @@ val appModule = module {
     single<ApiService> {
         get<Retrofit>().create(ApiService::class.java)
     }
+
+    // LoginActivity just asks koin for this via `by viewModel()` instead of building it itself
+    viewModel { LoginViewModel(get()) }
 }

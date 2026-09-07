@@ -15,5 +15,14 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // login already has the keypass from a successful auth call, so it just hands
+        // it straight over here - not used yet since this screen's still a stub, but
+        // it's ready for the next step (GET /dashboard/{keypass} + showing the sports)
+        val keypass = intent.getStringExtra(EXTRA_KEYPASS)
+    }
+
+    companion object {
+        const val EXTRA_KEYPASS = "extra_keypass"
     }
 }
