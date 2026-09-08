@@ -2,6 +2,7 @@ package com.example.dejoyafinalassessment.di
 
 import com.example.dejoyafinalassessment.data.remote.ApiService
 import com.example.dejoyafinalassessment.data.remote.NetworkConfig
+import com.example.dejoyafinalassessment.ui.dashboard.DashboardViewModel
 import com.example.dejoyafinalassessment.ui.login.LoginViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -45,4 +46,5 @@ val appModule = module {
 
     // LoginActivity just asks koin for this via `by viewModel()` instead of building it itself
     viewModel { LoginViewModel(get()) }
+    viewModel { DashboardViewModel(get()) }
 }

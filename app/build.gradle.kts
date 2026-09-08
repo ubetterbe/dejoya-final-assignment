@@ -51,6 +51,9 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
+    // Dashboard's list of sports entities
+    implementation(libs.androidx.recyclerview)
+
     // networking - retrofit talks to the API, gson converter turns json into our data classes
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)

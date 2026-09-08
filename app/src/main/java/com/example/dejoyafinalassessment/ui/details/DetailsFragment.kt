@@ -27,4 +27,14 @@ class DetailsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    companion object {
+        // plain Bundle keys (no Safe Args) that Dashboard writes to and this
+        // Fragment will read from once it's built out for real
+        const val ARG_SPORT_NAME = "arg_sport_name"
+        const val ARG_PLAYER_COUNT = "arg_player_count"
+        const val ARG_FIELD_TYPE = "arg_field_type"
+        const val ARG_OLYMPIC_SPORT = "arg_olympic_sport"
+        const val ARG_DESCRIPTION = "arg_description"
+    }
 }

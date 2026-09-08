@@ -7,5 +7,7 @@
     <string name="login_button">Login</string>
     <string name="login_error_empty_fields">Enter both your Student ID and First Name</string>
 
-    <string name="dashboard_placeholder">Dashboard - coming soon</string>
+    <string name="dashboard_players_format">Players: %1$d</string>
+    <string name="dashboard_olympic_sport">Olympic Sport</string>
+    <string name="dashboard_not_olympic_sport">Not an Olympic Sport</string>
 </resources>
