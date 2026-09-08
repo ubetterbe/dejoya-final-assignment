@@ -46,6 +46,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
 
+    // Navigation Component - MainActivity hosts a NavHostFragment, Dashboard/Details
+    // are Fragments swapped in and out of it rather than separate Activities
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
     // networking - retrofit talks to the API, gson converter turns json into our data classes
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)

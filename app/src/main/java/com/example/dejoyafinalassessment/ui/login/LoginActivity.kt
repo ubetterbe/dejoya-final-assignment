@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dejoyafinalassessment.MainActivity
 import com.example.dejoyafinalassessment.databinding.ActivityLoginBinding
-import com.example.dejoyafinalassessment.ui.dashboard.DashboardActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
 
         when (state) {
             is LoginUiState.Success -> {
-                val intent = Intent(this, DashboardActivity::class.java).apply {
-                    putExtra(DashboardActivity.EXTRA_KEYPASS, state.keypass)
+                val intent = Intent(this, MainActivity::class.java).apply {
+                    putExtra(MainActivity.EXTRA_KEYPASS, state.keypass)
                 }
                 startActivity(intent)
                 finish()
