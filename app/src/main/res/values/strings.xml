@@ -10,4 +10,12 @@
     <string name="dashboard_players_format">Players: %1$d</string>
     <string name="dashboard_olympic_sport">Olympic Sport</string>
     <string name="dashboard_not_olympic_sport">Not an Olympic Sport</string>
+
+    <string name="details_label_sport_name">Sport Name</string>
+    <string name="details_label_player_count">Player Count</string>
+    <string name="details_label_field_type">Field Type</string>
+    <string name="details_label_olympic_sport">Olympic Sport</string>
+    <string name="details_label_description">Description</string>
+    <string name="details_olympic_yes">Yes</string>
+    <string name="details_olympic_no">No</string>
 </resources>
