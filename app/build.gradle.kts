@@ -64,6 +64,13 @@ dependencies {
     implementation(libs.koin.android)
 
     testImplementation(libs.junit)
+    // ViewModel unit tests - MockK fakes ApiService, coroutines-test drives
+    // viewModelScope's Dispatchers.Main on the JVM (no Android device needed)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    // LiveData.setValue() asserts it's on the main thread, which doesn't exist in a
+    // plain JVM test - this rule fakes that so the ViewModels' _uiState.value = ... works
+    testImplementation(libs.androidx.arch.core.testing)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
