@@ -2,11 +2,11 @@ package com.example.dejoyafinalassessment.ui.dashboard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dejoyafinalassessment.R
 import com.example.dejoyafinalassessment.data.model.Entity
 import com.example.dejoyafinalassessment.databinding.ItemEntityBinding
+import com.google.android.material.color.MaterialColors
 
 class EntityAdapter(
     private val onItemClick: (Entity) -> Unit
@@ -45,14 +45,20 @@ class EntityAdapter(
             )
 
             // brief only wants the summary card to say whether it's an Olympic
-            // sport, not description - description is what's saved for Details
+            // sport, not description - description is what's saved for Details.
+            // Gold badge is reserved for this one signal, so it only shows up
+            // when the API actually says olympicSport is true for that entity
             if (entity.olympicSport) {
                 binding.textOlympicStatus.text = context.getString(R.string.dashboard_olympic_sport)
-                binding.textOlympicStatus.setTextColor(ContextCompat.getColor(context, R.color.olympic_yes))
+                binding.textOlympicStatus.setBackgroundResource(R.drawable.bg_olympic_badge)
+                binding.textOlympicStatus.setTextColor(
+                    MaterialColors.getColor(binding.textOlympicStatus, com.google.android.material.R.attr.colorOnSecondary)
+                )
             } else {
                 binding.textOlympicStatus.text = context.getString(R.string.dashboard_not_olympic_sport)
+                binding.textOlympicStatus.background = null
                 binding.textOlympicStatus.setTextColor(
-                    ContextCompat.getColor(context, android.R.color.darker_gray)
+                    MaterialColors.getColor(binding.textOlympicStatus, com.google.android.material.R.attr.colorOnSurfaceVariant)
                 )
             }
 

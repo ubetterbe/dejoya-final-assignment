@@ -57,7 +57,10 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <!-- MaterialButton picks up colorPrimary/colorOnPrimary from the theme
+         automatically (filled style is the M3 default), so navy background +
+         white text just falls out of the theme instead of being set here -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text=""
-        android:textColor="@color/login_error"
+        android:textColor="?attr/colorError"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

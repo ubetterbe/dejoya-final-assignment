@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dejoyafinalassessment.R
 import com.example.dejoyafinalassessment.databinding.FragmentDetailsBinding
+import com.google.android.material.color.MaterialColors
 
 // no ViewModel here on purpose - this screen doesn't call the API or do any
 // async work, it's just displaying an entity Dashboard already fetched and
@@ -36,11 +37,20 @@ class DetailsFragment : Fragment() {
         binding.textFieldType.text = args.getString(ARG_FIELD_TYPE)
         binding.textDescription.text = args.getString(ARG_DESCRIPTION)
 
-        // "Yes"/"No" reads a lot friendlier here than a raw true/false would
-        binding.textOlympicSport.text = if (args.getBoolean(ARG_OLYMPIC_SPORT)) {
-            getString(R.string.details_olympic_yes)
+        // "Yes"/"No" reads a lot friendlier here than a raw true/false would.
+        // Same gold badge as the Dashboard card - only lit up when it's actually true
+        if (args.getBoolean(ARG_OLYMPIC_SPORT)) {
+            binding.textOlympicSport.text = getString(R.string.details_olympic_yes)
+            binding.textOlympicSport.setBackgroundResource(R.drawable.bg_olympic_badge)
+            binding.textOlympicSport.setTextColor(
+                MaterialColors.getColor(binding.textOlympicSport, com.google.android.material.R.attr.colorOnSecondary)
+            )
         } else {
-            getString(R.string.details_olympic_no)
+            binding.textOlympicSport.text = getString(R.string.details_olympic_no)
+            binding.textOlympicSport.background = null
+            binding.textOlympicSport.setTextColor(
+                MaterialColors.getColor(binding.textOlympicSport, com.google.android.material.R.attr.colorOnPrimaryContainer)
+            )
         }
     }
 

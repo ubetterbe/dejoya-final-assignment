@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- pill background for the "Olympic Sport" badge - only ever applied when
+     olympicSport is true, so seeing this shape IS the signal -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorSecondary" />
+    <corners android:radius="12dp" />
+</shape>

@@ -1,98 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- plain labeled rows for now - no card styling, that's a separate design pass later.
+<!-- labeled rows in a card now, matching the Dashboard's item cards.
      wrapped in a ScrollView since description can run long on some sports -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.details.DetailsFragment">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="?attr/colorPrimaryContainer"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/details_label_sport_name"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textSportName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            tools:text="Basketball" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/details_label_player_count"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textPlayerCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            tools:text="5" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/details_label_field_type"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textFieldType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            tools:text="Court" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/details_label_olympic_sport"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textOlympicSport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            tools:text="Yes" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/details_label_description"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <!-- the long one - no marginBottom needed since it's the last row -->
-        <TextView
-            android:id="@+id/textDescription"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            tools:text="A team sport played on a rectangular court where two teams of five players try to score by shooting a ball through the opposing team's hoop." />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_label_sport_name"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textSportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="18sp"
+                tools:text="Basketball" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_label_player_count"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textPlayerCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="18sp"
+                tools:text="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_label_field_type"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textFieldType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="18sp"
+                tools:text="Court" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_label_olympic_sport"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- same badge treatment as the Dashboard's Olympic indicator - background
+                 and text color get set in DetailsFragment only when it's actually true -->
+            <TextView
+                android:id="@+id/textOlympicSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:background="@drawable/bg_olympic_badge"
+                tools:text="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details_label_description"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- the long one - no marginBottom needed since it's the last row -->
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="16sp"
+                tools:text="A team sport played on a rectangular court where two teams of five players try to score by shooting a ball through the opposing team's hoop." />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </ScrollView>

@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- switched to a MaterialComponents parent since AppCompatActivity needs one, not the plain android: theme -->
-    <style name="Theme.DeJoyaFinalAssessment" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <!-- Material 3 theme - Olympic navy/gold direction, tied into the
+         olympicSport field in the actual data (see EntityAdapter/DetailsFragment
+         for where colorSecondary gets used as the "is this an Olympic sport" badge) -->
+    <style name="Theme.DeJoyaFinalAssessment" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- deep navy as the main brand color -->
+        <item name="colorPrimary">@color/olympic_navy</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- gold accent - only meant to be used where it means something,
+             i.e. the Olympic sport badge, not scattered around as decoration -->
+        <item name="colorSecondary">@color/olympic_gold</item>
+        <item name="colorOnSecondary">@color/olympic_navy</item>
+
+        <!-- soft navy-tinted container for secondary surfaces like item cards -->
+        <item name="colorPrimaryContainer">@color/olympic_navy_container</item>
+        <item name="colorOnPrimaryContainer">@color/olympic_navy</item>
+
+        <!-- light neutral app background. android:colorBackground also needs
+             setting explicitly - M3's baseline theme backs the actual window/
+             view background with that, not colorSurface, and its default is a
+             purple-tinted neutral that clashed hard with navy/gold -->
+        <item name="colorSurface">@color/surface_neutral</item>
+        <item name="colorOnSurface">@color/text_dark</item>
+        <item name="android:colorBackground">@color/surface_neutral</item>
+
+        <!-- standard M3 red, not the navy/gold palette on purpose - errors
+             need to stay visually distinct and universally readable -->
+        <item name="colorError">@color/error_red</item>
+    </style>
 </resources>

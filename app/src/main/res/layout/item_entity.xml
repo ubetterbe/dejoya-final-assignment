@@ -12,6 +12,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="?attr/colorPrimaryContainer"
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp">
 
@@ -24,6 +25,7 @@
             android:id="@+id/textSportName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnPrimaryContainer"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:textColor="?attr/colorOnPrimaryContainer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textSportName"
@@ -46,20 +49,26 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:textColor="?attr/colorOnPrimaryContainer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textFieldType"
             tools:text="Players: 5" />
 
+        <!-- badge look (background/color) only gets applied in EntityAdapter when
+             olympicSport is true - gold is reserved for that, not decoration -->
         <TextView
             android:id="@+id/textOlympicStatus"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textPlayerCount"
+            tools:background="@drawable/bg_olympic_badge"
             tools:text="Olympic Sport" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
